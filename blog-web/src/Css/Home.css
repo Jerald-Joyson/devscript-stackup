@@ -1,0 +1,31 @@
+img {
+  height: 900px;
+  object-fit: cover;
+}
+
+.main {
+  position: relative;
+  background: #000;
+}
+
+.card {
+  position: absolute;
+  top: 50%; /* Position it vertically in the center */
+  left: 50%; /* Position it horizontally in the center */
+  transform: translate(-50%, -50%); /* Center it perfectly */
+  width: 70%;
+  height: 50%;
+}
+
+/* Define your navbar styles here */
+.navbar {
+  background: rgba(0, 0, 0, 0.5); /* Set the background color with opacity */
+  padding: 1rem; /* Adjust padding as needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  color: white; /* Set text color */
+ 
+}
