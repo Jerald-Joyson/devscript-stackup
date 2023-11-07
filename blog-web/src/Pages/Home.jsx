@@ -17,9 +17,9 @@ function Home() {
         </div>
 
         <div className="card w-86 h-86 bg-gray-500 border border-solid bg-opacity-40 p-7 rounded-md flex flex-col justify-center items-center text-white ">
-          <h2 className="text-3xl font-bold">Hi UserName !</h2>
+          <h2 className="text-3xl font-bold mb-3">Hi UserName !</h2>
           <h1 className="text-7xl mt-3 font-semibold">Welcome To Blog</h1>
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center mb-3">
             <p className="mt-3 text-xl">"Awesome place to make oneself</p>
             <p className="text-xl">productive and entertained</p>
             <p className="text-xl"> through daul updates."</p>
