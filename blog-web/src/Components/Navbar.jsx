@@ -8,7 +8,7 @@ function Navbar() {
           <a href="https://flowbite.com/" class="flex items-center">
            
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
+              Blog
             </span>
           </a>
           <div class="flex md:order-2">
