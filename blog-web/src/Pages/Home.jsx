@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import BackgroundImg from "../Images/home.jpg";
 import "../Css/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -24,9 +25,11 @@ function Home() {
             <p className="text-xl">productive and entertained</p>
             <p className="text-xl"> through daul updates."</p>
           </div>
-          <button className="bg-white rounded-3xl w-48 h-14 mt-3 font-bold text-xl text-black border border-solid border-black hover:bg-slate-200">
-            Create Post
-          </button>
+          <Link to="/Uploaded">
+            <button className="bg-white rounded-3xl w-48 h-14 mt-3 font-bold text-xl text-black border border-solid border-black hover:bg-slate-200">
+              Create Post
+            </button>
+          </Link>
         </div>
       </div>
     </div>

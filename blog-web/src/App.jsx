@@ -1,13 +1,16 @@
 import "./App.css";
 import Home from "./Pages/Home";
 import Uploaded from "./Pages/Uploaded";
-import Practicing from "./Pages/Practicing";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div>
-      {/* <Home /> */}
-      <Uploaded/>
-      {/* <Practicing /> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Uploaded" element={<Uploaded />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
