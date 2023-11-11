@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import auth from '../firebase/firebaseAuth';
+import { auth } from '../firebase/firebase';
 import background from '../images/website.jpg';
 import '../css/login.css'
 import { BiLockAlt, BiUser, } from 'react-icons/bi';
