@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <div className="main w-full">
+      <div className="main w-screen">
         <img
           src={BackgroundImg}
           alt="Background"
