@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import "../Css/Upload.css";
 import { BiImageAdd } from "react-icons/bi";
+import { Timestamp, addDoc, collection } from 'firebase/firestore';
+import toast from 'react-hot-toast';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 function Uploaded() {
   const [imageSrc, setImageSrc] = useState(null);
+
   const [postDetails, setPostDetails] = useState({
     title: "",
     details: "",
+    time: Timestamp.now(),
   });
 
   const handleImageUpload = (event) => {
@@ -41,10 +46,18 @@ function Uploaded() {
     // For now, let's just log the details to the console
     console.log("Uploaded Details:", postDetails);
   };
+  //* Add Post Function 
+  const addPost = async () => {
+    if (blogs.title === "" || blogs.category === "" || blogs.content === "" || blogs.thumbnail === "") {
+      toast.error('Please Fill All Fields');
+    }
+    // console.log(blogs.content)
+    uploadImage()
+  }
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex items-center justify-center">
         <div className="main bg-black  mt-6">
           <div className="Image grid bg-white m-5 rounded text-center relative">
