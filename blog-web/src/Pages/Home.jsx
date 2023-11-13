@@ -7,15 +7,15 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <div className="main w-screen">
+      <div className="w-screen">
         <img
           src={BackgroundImg}
           alt="Background"
           className="w-full max-h-screen object-cover"
         />
-        <div className="navbar bg-opacity-40 bg-black">
+        {/* <div className="navbar bg-opacity-40 bg-black">
           <Navbar />
-        </div>
+        </div> */}
 
         <div className="card w-86 h-86 bg-gray-500 border border-solid bg-opacity-40 p-7 rounded-md flex flex-col justify-center items-center text-white ">
           <h2 className="text-3xl font-bold mb-3">Hi UserName !</h2>

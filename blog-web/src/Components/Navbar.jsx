@@ -8,7 +8,7 @@ function Navbar() {
   };
   return (
     <div>
-      <nav className="bg-gradient-to-r bg-black bg-opacity-80 rounded-md">
+      <nav className="bg-gradient-to-r bg-black rounded-md">
         <div className=" flex flex-wrap  mx-auto p-4 justify-between ml-8 mr-8">
           {/* Logo */}
           <div>

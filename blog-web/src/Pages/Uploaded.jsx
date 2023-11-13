@@ -44,7 +44,7 @@ function Uploaded() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex items-center justify-center">
         <div className="main bg-black  mt-6">
           <div className="Image grid bg-white m-5 rounded text-center relative">
