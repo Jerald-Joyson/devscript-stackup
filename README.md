@@ -72,7 +72,7 @@ Save the configuration files and you're all set to move to the next step.
 
 ## How to Run
 
-With the project configured, follow these steps to run [Your Project Name]:
+With the project configured, follow these steps to run devscript-stackup:
 
 => Start the Development Server:
 
@@ -80,6 +80,6 @@ With the project configured, follow these steps to run [Your Project Name]:
 
 => Open Your Browser:
 
-Visit http://localhost:5173 to see [Your Project Name] in action!
+Visit http://localhost:5173 to see devscript-stackup in action!
 
 Congratulations! You've successfully set up and launched [Your Project Name]. Explore the features, create engaging content, and enjoy the seamless experience brought to you by Vite, ReactJS, Tailwind CSS, and Firebase.
