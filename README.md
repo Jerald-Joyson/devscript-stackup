@@ -50,15 +50,15 @@ Getting devscript-stackup up and running on your local environment is a breeze. 
 
 => Clone the Repository:
 
-                 git clone https://github.com/Jerald-Joyson/devscript-stackup.git
+    git clone https://github.com/Jerald-Joyson/devscript-stackup.git
 
 => Navigate to the Project Directory:
 
-                 cd devscript-stackup/blog-web/
+    cd devscript-stackup/blog-web/
 
 => Install Dependencies:
 
-                 yarn install
+    yarn install
 
 => Configure Firebase:
 
@@ -76,7 +76,7 @@ With the project configured, follow these steps to run devscript-stackup:
 
 => Start the Development Server:
 
-                 yarn dev
+    yarn dev
 
 => Open Your Browser:
 
