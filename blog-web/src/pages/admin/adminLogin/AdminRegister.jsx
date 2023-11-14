@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 import myContext from "../../../context/data/myContext";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../../firebase/FirebaseConfig";
 
-export default function AdminLogin() {
+export default function AdminRegister() {
     const context = useContext(myContext);
     const { mode } = context;
 
@@ -22,21 +22,26 @@ export default function AdminLogin() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
 
-    const login = async () => {
+    const register = async () => {
         if (!email || !password) {
-            return toast.error("All fileds are required")
+            return toast.error("All fields are required");
+        }
+
+        if (password !== confirmPassword) {
+            return toast.error("Passwords do not match");
         }
 
         try {
-            const result = await signInWithEmailAndPassword(auth, email, password);
-            toast.success("Login successful")
-            localStorage.setItem("admin", JSON.stringify(result));
-            navigate('/dashboard')
+            await createUserWithEmailAndPassword(auth, email, password);
+            toast.success("Registration successful")
+            console.log("Registration Successfull")
+            navigate('/adminlogin')
         } catch (error) {
             console.log(error)
-            toast.error("Login failed")
+            toast.error("Registration failed")
         }
 
     }
@@ -83,7 +88,7 @@ export default function AdminLogin() {
                             ? 'rgb(30, 41, 59)'
                             : 'rgb(226, 232, 240)'
                     }}>
-                        Login
+                        Register
                     </Typography>
                 </CardHeader>
 
@@ -109,9 +114,18 @@ export default function AdminLogin() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
+                        {/* Third Input  */}
+                        <div>
+                            <Input
+                                type="password"
+                                label="Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                            />
+                        </div>
                         {/* Login Button  */}
                         <Button
-                            onClick={login}
+                            onClick={register}
                             style={{
                                 background: mode === 'dark'
                                     ? 'rgb(226, 232, 240)'
@@ -120,13 +134,13 @@ export default function AdminLogin() {
                                     ? 'rgb(30, 41, 59)'
                                     : 'rgb(226, 232, 240)'
                             }}>
-                            Login
+                            Register
                         </Button>
                     </form>
                     <p className="mt-5 text-sm text-black text-center">
-                        Don't have an account?
-                        <Link to={'/adminregister'} className="text-blue-700 hover:underline">
-                            Register
+                        Do you have an account?
+                        <Link to={'/adminlogin'} className="text-blue-700 hover:underline">
+                            Login
                         </Link>
                     </p>
                 </CardBody>

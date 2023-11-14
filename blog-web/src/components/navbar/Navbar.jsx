@@ -51,17 +51,19 @@ export default function Nav() {
                     Blogs
                 </Link>
             </Typography>
+
             <Typography
                 as="li"
                 variant="small"
                 color="blue-gray"
                 className="p-1 font-normal"
                 style={{ color: mode === 'dark' ? 'white' : 'white' }}
-            >
+            >{!admin && (
                 <Link to={'/adminlogin'} className="flex items-center">
-                    Admin Login
-                </Link>
+                    Login/Register
+                </Link>)}
             </Typography>
+
         </ul>
     );
 
@@ -101,6 +103,7 @@ export default function Nav() {
                         <div className="hidden lg:block">
                             {navList}
                         </div>
+
 
                         {/* Search Icon */}
                         <div>

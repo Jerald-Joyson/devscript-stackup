@@ -4,12 +4,25 @@ import myContext from '../../../context/data/myContext';
 import { Button } from '@material-tailwind/react';
 import { Link, useNavigate } from 'react-router-dom';
 
+const extractUsername = (email) => {
+    if (typeof email !== 'string' || !email.includes('@')) {
+        return null;
+    }
+    const parts = email.split('@');
+    return parts[0];
+};
+
 function Dashboard() {
+    const storedAdmin = JSON.parse(localStorage.getItem('admin'));
+    const storedEmail = storedAdmin?.user?.email;
+    const username = extractUsername(storedEmail);
+
     const context = useContext(myContext);
     const { mode, getAllBlog, deleteBlogs } = context;
     const navigate = useNavigate();
 
     console.log(getAllBlog)
+    const numberOfBlogs = getAllBlog.length;
 
     const logout = () => {
         localStorage.clear('admin');
@@ -19,6 +32,7 @@ function Dashboard() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
     return (
         <Layout>
             <div className="py-10">
@@ -32,10 +46,9 @@ function Dashboard() {
                     </div>
                     <div className="right">
                         <h1
-                            className='text-center font-bold text-2xl mb-2'
+                            className='font-bold text-2xl mb-2'
                             style={{ color: mode === 'dark' ? 'white' : 'black' }}
-                        >
-                            Jerald Joyson
+                        >{username.toUpperCase()}
                         </h1>
 
                         <h2
@@ -43,11 +56,11 @@ function Dashboard() {
                             Software Developer
                         </h2>
                         <h2
-                            style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">jeraldjoyson@gmail.com
+                            style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold"> {storedEmail}
                         </h2>
                         <h2
                             style={{ color: mode === 'dark' ? 'white' : 'black' }} className="font-semibold">
-                            <span>Total Blog : </span>  15
+                            <span>Total Blog : </span>  {numberOfBlogs}
                         </h2>
                         <div className=" flex gap-2 mt-2">
                             <Link to={'/createblog'}>
