@@ -21,11 +21,11 @@ devscript
 
 ## How it Works ?
 
-# Overview
+### Overview
 
 devscript-stackup is designed to provide users with a dynamic and responsive blogging platform. It seamlessly integrates with Firebase, ensuring fast and secure data storage. The user-friendly interface powered by ReactJS guarantees an optimal experience for both content creators and readers.
 
-# Key Features
+### Key Features
 
 Dynamic Content Creation: Easily create and manage blog posts with a user-friendly interface.
 Real-time Updates: Experience instant updates and interactions thanks to Firebase's real-time database.
