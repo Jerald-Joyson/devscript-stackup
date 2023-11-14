@@ -27,15 +27,15 @@ function HeroSection() {
               </div>
 
               {/* Text  */}
-              <h1 className="text-3xl text-white font-bold">DevScript</h1>
+              <h1 className="text-4xl text-white font-bold">DevScript</h1>
             </div>
 
             {/* Paragraph  */}
             <p
               style={{ color: mode === "dark" ? "white" : "white" }}
-              className="sm:text-3xl text-xl font-extralight sm:mx-auto "
+              className="sm:text-2xl text-xl font-extralight sm:mx-auto "
             >
-              Here are some blogs that are created by DevScript.
+              "Blogging is not just writing, <br /> it's sharing your knowledge with the world."
             </p>
           </div>
         </main>
