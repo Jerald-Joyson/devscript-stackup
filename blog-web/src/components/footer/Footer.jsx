@@ -26,7 +26,7 @@ function Footer() {
                 <p style={{ color: secondaryColor, borderColor: secondaryColor }} className="text-sm  sm:ml-4 sm:pl-4 sm:border-l-2 sm:py-2 sm:mt-0 mt-4" >
                     © 2023 Devscript —
                     <a
-                        href="" style={{ color: black }}
+                        href="https://github.com/Jerald-Joyson/devscript-stackup" style={{ color: black }}
                         className="ml-1"
                         rel="noopener noreferrer"
                         target="_blank"
