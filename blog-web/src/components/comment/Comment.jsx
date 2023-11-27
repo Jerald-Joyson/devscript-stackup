@@ -5,6 +5,23 @@ import myContext from '../../context/data/myContext';
 function Comment({ addComment, commentText, setcommentText, allComment, fullName, setFullName }) {
   const context = useContext(myContext);
   const { mode } = context;
+
+  const validateForm = () => {
+    return fullName.trim() !== '' && commentText.trim() !== '';
+  };
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Proceed with adding the comment
+      addComment();
+    } else {
+      // Display an error message or handle the invalid form state
+      console.log('Please fill in all fields.');
+    }
+  };
+
   return (
     <section className=" py-8 lg:py-16">
       <div className="max-w-2xl mx-auto px-4">
@@ -14,7 +31,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
           </h2>
         </div>
         {/* Comment Form  */}
-        <form className="mb-6">
+        <form className="mb-6" onSubmit={handleSubmit}>
           {/* Full Name Input  */}
           <div
             className="py-2 px-4 mb-4 rounded-lg rounded-t-lg 
@@ -29,7 +46,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
               onChange={(e) => setFullName(e.target.value)}
               type='text'
               placeholder='Enter Full Name'
-              className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 "
+              className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 " required
               style={{
                 background: mode === 'dark'
                   ? '#353b48'
@@ -57,7 +74,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
           {/* Button  */}
           <div className="">
             <Button
-              onClick={addComment}
+              type="submit"
               style={{
                 background: mode === 'dark'
                   ? 'rgb(226, 232, 240)'
@@ -76,7 +93,7 @@ function Comment({ addComment, commentText, setcommentText, allComment, fullName
         <article className="p-6 mb-6 text-base rounded-lg " style={{ background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)' }}>
           {allComment.map((item, index) => {
             console.log(item)
-            const {fullName, commentText, date} = item;
+            const { fullName, commentText, date } = item;
             return (
               <>
                 <footer className="flex justify-between items-center mb-">
