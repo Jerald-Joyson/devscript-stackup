@@ -17,7 +17,7 @@ devscript
 
 ## Link to product walkthrough
 
-[link to video]
+https://blog-website-xi-blush.vercel.app/
 
 ## How it Works ?
 
